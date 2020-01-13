@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <div id="app" class="container is-widescreen">
+            <h2 class="title has-text-centered dividing-header">Feed!</h2>
+
+            <div v-for="submission in sortedSubmissions" v-bind:key="submission.id"
+                v-bind:class="{'blue-border': submission.votes >=25}" class="section">
+                <article class="media">
+                    <submission-component v-bind:submission="submission" v-bind:submissions="sortedSubmissions">
+                    </submission-component>
+
+                </article>
+            </div>
+        </div>
+    </body>
+
+</html>
